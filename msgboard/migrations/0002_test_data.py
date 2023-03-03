@@ -19,6 +19,3 @@ def generate_data(apps, schema_editor):
     with transaction.atomic():
         for author, text in test_data:
             Message(author=author, text=text).save()
-    operations = [
-        migrations.RunPython(generate_data),
-    ]
